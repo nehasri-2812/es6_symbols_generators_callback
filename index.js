@@ -100,6 +100,14 @@ console.log(obj.next());
 
 // 9. Write a function greet that takes a name and a callback function. The function should 
 // return a greeting message by calling the callback with the message. 
+
+function greet(name,callback) {
+  return callback(name);
+}
+function sayhello(name) {
+  return "hello "+name;
+}
+console.log(greet("Neha",sayhello))
 // 10. Create three functions that take a number, multiply it by 2, subtract 3, and then add 
 // 10. Use callbacks to chain these operations together. 
 // 11. Write a function delayedMessage(message, delay) that prints the message after the 
