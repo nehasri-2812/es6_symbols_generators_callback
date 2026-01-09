@@ -110,6 +110,27 @@ function sayhello(name) {
 console.log(greet("Neha",sayhello))
 // 10. Create three functions that take a number, multiply it by 2, subtract 3, and then add 
 // 10. Use callbacks to chain these operations together. 
+
+function multiplyBy2(num, callback) {
+  callback(num * 2);
+}
+
+function subtract3(num, callback) {
+  callback(num - 3);
+}
+
+function add10(num, callback) {
+  callback(num + 10);
+}
+
+multiplyBy2(5, result1 => {
+  subtract3(result1, result2 => {
+    add10(result2, finalResult => {
+      console.log(finalResult); // ((5*2)-3)+10 = 17
+    });
+  });
+});
+
 // 11. Write a function delayedMessage(message, delay) that prints the message after the 
 // specified delay using setTimeout. Use a callback for when the message has been 
 // printed. 
